@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/*
+Thứ tự import file .scss
+- Helpers: chứa các file variables, mixin, extend, function,...
+- Vendors: chứa scss của library bên ngoài
+- Base: chỉnh sửa mặc định của trình duyệt reset
+- Components: chứa các file phần tử của trang: btn, title
+- Layout: tp lớn dùng chung cho toàn page: Header, Footer, Sidebar
+- Pages: chứa style riêng của trang khác nhau
+- Themes: chứa theme chủ đạo khác nhau
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}/*# sourceMappingURL=main.css.map */
