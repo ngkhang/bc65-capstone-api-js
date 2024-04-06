@@ -43,7 +43,7 @@
 
 - [Live Demo](https://)
 - [Youtube](https://)
-- [Github](https://github.com/ngkhang/bc65-capstone-api-javascript)
+- [Github](https://github.com/ngkhang/bc65-capstone-api-js)
 - [Link Backup: Google Drive](https://)
 
 ---
