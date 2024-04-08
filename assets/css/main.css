@@ -48,4 +48,31 @@ section#homepage a {
 section#homepage a:hover {
   scale: 1.2;
   opacity: 1;
+}
+
+section#adminPage img {
+  position: absolute;
+  max-width: 300vh;
+  max-height: 200vh;
+  width: 100%;
+  height: 100%;
+}
+section#adminPage h1 {
+  position: absolute;
+  z-index: 99;
+  margin: 10vh 0 0 80vh;
+}
+section#adminPage .add {
+  position: absolute;
+}
+section#adminPage .btnAdd {
+  transform: translateX(230px) translateY(230px);
+}
+section#adminPage .container {
+  position: relative;
+  padding-top: 400px;
+  color: white;
+}
+section#adminPage .container .row {
+  margin-left: 100px;
 }/*# sourceMappingURL=main.css.map */

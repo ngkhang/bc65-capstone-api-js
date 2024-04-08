@@ -1,0 +1,28 @@
+section#adminPage {
+  img {
+    position: absolute;
+    max-width: 300vh;
+    max-height: 200vh;
+    width: 100%;
+    height: 100%;
+  }
+  h1 {
+    position: absolute;
+    z-index: 99;
+    margin: 10vh 0 0 80vh;
+  }
+  .add {
+    position: absolute;
+  }
+  .btnAdd {
+    transform: translateX(230px) translateY(230px);
+  }
+  .container {
+    position: relative;
+    padding-top: 400px;
+    color: white;
+  }
+  .container .row {
+    margin-left: 100px;
+  }
+}
