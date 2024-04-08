@@ -1,0 +1,11 @@
+section#homepage {
+  a {
+    transition: 0.2s all;
+    opacity: 0.8;
+
+    &:hover {
+      scale: 1.2;
+      opacity: 1;
+    }
+  }
+}

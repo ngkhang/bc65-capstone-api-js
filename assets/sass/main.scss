@@ -10,7 +10,9 @@ Thứ tự import file .scss
 */
 
 // Helpers
+@import './Helpers/variables';
 // Vendors
+@import './Vendors/vendors.scss';
 // Base
 @import './Base/reset';
 // Components
