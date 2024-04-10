@@ -23,7 +23,7 @@ Thứ tự import file .scss
 
 :root {
   --pink-1: #f9b5c3;
-  --pink-2: #d82f8b;
+  --pink-2: #d82d8b;
   --pink-3: #a50064;
   --white: #fff;
   --gray-1: #f5f5f5;
@@ -147,7 +147,8 @@ section#customerPage form#search input::placeholder {
 }
 section#customerPage form#search button {
   outline: none;
-  color: var(--gray-8);
+  font-weight: 500;
+  color: var(--gray-6);
 }
 section#customerPage form#search button:hover {
   color: var(--pink-2);
@@ -156,7 +157,7 @@ section#customerPage form#search button::before {
   content: "";
   display: inline-block;
   position: absolute;
-  border-left: 2px solid rgb(221, 221, 227);
+  border-left: 2px solid var(--gray-4);
   left: 0;
   top: 50%;
   transform: translateY(-50%);
@@ -164,8 +165,27 @@ section#customerPage form#search button::before {
   margin-left: 2px;
 }
 section#customerPage #listCard .card {
-  opacity: 0.8;
+  box-shadow: 0 0.5rem 1rem var(--gray-4);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.5s all ease-in-out;
 }
 section#customerPage #listCard .card:hover {
-  opacity: 1;
+  box-shadow: 0 0.5rem 1rem var(--gray-6);
+}
+section#customerPage #listCard .card .btn-group button {
+  background: none;
+  border-radius: 50%;
+  border: 2px solid var(--pink-2);
+  color: var(--pink-2);
+}
+section#customerPage #listCard .card .btn-group button.btn--down {
+  border-color: var(--gray-3);
+}
+section#customerPage #listCard .card .btn-group input {
+  border-radius: 10px;
+}
+section#customerPage #listCard .card .btnAdd {
+  background: var(--pink-2);
+  color: var(--white);
 }/*# sourceMappingURL=main.css.map */

@@ -1,30 +1,31 @@
 /* Customer page */
 section#customerPage {
-  background: $bg-gray-1;
+  background: $gray-1;
 
   form#search {
-    background: $bg-white;
+    background: $white;
 
     input {
       outline: none;
       width: 70%;
-      color: $text-gray-8;
+      color: $gray-8;
       &::placeholder {
-        color: $text-gray-4;
+        color: $gray-4;
       }
     }
     button {
       outline: none;
-      color: $text-gray-8;
+      font-weight: 500;
+      color: $gray-6;
       &:hover {
-        color: $bg-pink-2;
+        color: $pink-2;
       }
 
       &::before {
         content: '';
         display: inline-block;
         position: absolute;
-        border-left: 2px solid rgb(221, 221, 227);
+        border-left: 2px solid $gray-4;
         left: 0;
         top: 50%;
         transform: translateY(-50%);
@@ -36,9 +37,34 @@ section#customerPage {
 
   #listCard {
     .card {
-      opacity: 0.8;
+      box-shadow: 0 0.5rem 1rem $gray-4;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: 0.5s all ease-in-out;
       &:hover {
-        opacity: 1;
+        box-shadow: 0 0.5rem 1rem $gray-6;
+      }
+
+      .btn-group {
+        button {
+          background: none;
+          border-radius: 50%;
+          border: 2px solid $pink-2;
+          color: $pink-2;
+
+          &.btn--down {
+            border-color: $gray-3;
+          }
+        }
+
+        input {
+          border-radius: 10px;
+        }
+      }
+
+      .btnAdd {
+        background: $pink-2;
+        color: $white;
       }
     }
   }
