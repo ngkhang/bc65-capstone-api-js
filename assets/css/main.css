@@ -25,6 +25,7 @@ Thứ tự import file .scss
   --pink-1: #f9b5c3;
   --pink-2: #d82f8b;
   --pink-3: #a50064;
+  --white: #fff;
   --gray-1: #f5f5f5;
   --gray-2: #eeeeee;
   --gray-3: #e0e0e0;
@@ -36,9 +37,85 @@ Thứ tự import file .scss
   --gray-9: #171717;
 }
 
+/*
+  --theme-color: #e40000;
+  --primary-color: #0d369f;
+  --primary-light: #fcf1e7;
+  --primary-dark: #ffc945;
+  --secondary-color: #ff6e65;
+  --font-color: #707070;
+  --bg-color: #fff;
+  --bg-color-2: #fff;
+  --heading-color: #060606;
+  --footer-color: #060e1f;
+  --footer-cpy-color: #040a17;
+  --border-color: transparent;
+  --border-color-light: #eee;
+  --iframe-filter: grayscale(0%);
+  --bg-grey: #f9f9f9;
+  --bg-light: #f8f9ff;
+  --bg-dark-color: #fff;
+  --quote-font-color: #1d2c4c;
+  --paceholder-color-search: #6c757d;
+  --bg-color-li: rgb(13 54 159 / 9%);
+  --box-shadow-color: rgb(4 20 69 / 10%);
+  --logo-color: #0d369f;
+*/
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   font-family: "Poppins", sans-serif;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-md {
+  font-size: 0.9375rem;
+}
+
+.text-tiny {
+  font-size: 0.8125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
 }
 
 section#homepage a {
@@ -47,5 +124,48 @@ section#homepage a {
 }
 section#homepage a:hover {
   scale: 1.2;
+  opacity: 1;
+}
+
+/* Customer page */
+section#customerPage {
+  background: var(--gray-1);
+}
+section#customerPage form#search {
+  background: var(--white);
+}
+section#customerPage form#search input {
+  outline: none;
+  width: 70%;
+  color: var(--gray-8);
+}
+section#customerPage form#search input::-moz-placeholder {
+  color: var(--gray-4);
+}
+section#customerPage form#search input::placeholder {
+  color: var(--gray-4);
+}
+section#customerPage form#search button {
+  outline: none;
+  color: var(--gray-8);
+}
+section#customerPage form#search button:hover {
+  color: var(--pink-2);
+}
+section#customerPage form#search button::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  border-left: 2px solid rgb(221, 221, 227);
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 26px;
+  margin-left: 2px;
+}
+section#customerPage #listCard .card {
+  opacity: 0.8;
+}
+section#customerPage #listCard .card:hover {
   opacity: 1;
 }/*# sourceMappingURL=main.css.map */

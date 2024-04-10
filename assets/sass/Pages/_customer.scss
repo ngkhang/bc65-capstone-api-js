@@ -1,0 +1,45 @@
+/* Customer page */
+section#customerPage {
+  background: $bg-gray-1;
+
+  form#search {
+    background: $bg-white;
+
+    input {
+      outline: none;
+      width: 70%;
+      color: $text-gray-8;
+      &::placeholder {
+        color: $text-gray-4;
+      }
+    }
+    button {
+      outline: none;
+      color: $text-gray-8;
+      &:hover {
+        color: $bg-pink-2;
+      }
+
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        border-left: 2px solid rgb(221, 221, 227);
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 26px;
+        margin-left: 2px;
+      }
+    }
+  }
+
+  #listCard {
+    .card {
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
