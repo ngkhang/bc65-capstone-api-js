@@ -10,14 +10,14 @@
 
 List of tasks or features that are common for both customer and admin roles:
 
-- [ ] Setup project
-  - [ ] Folder structure
-  - [ ] Setup API by MockAPI
-  - [ ] List of Tasks
-- [ ] Design homepage layout
-  - [ ] Layout
-  - [ ] Responsive
-- [ ] Validation input
+- [x] Setup project
+  - [x] Folder structure
+  - [x] Setup API by MockAPI
+  - [x] List of Tasks
+- [x] Design homepage layout
+  - [x] Layout
+  - [x] Responsive
+- [x] Validation input
 - [ ] Refactor code and write documentation
 - [ ] Deploy and record/upload video demo project.
 
@@ -26,13 +26,13 @@ List of tasks or features that are common for both customer and admin roles:
 List of tasks or features specific to the customer role:
 
 - UI Customer
-  - [ ] Layout customer page
-  - [ ] Responsive
+  - [x] Layout customer page
+  - [x] Responsive
   - [ ] Layout Payment
 - [ ] Handle logic
   - The perform with Products
     - [ ] Get list of products.
-    - [ ] Apply keyword (product type) to product search
+    - [x] Apply keyword (product type) to product search
   - The perform with Cart
     - [ ] Get information about the customer's cart
     - [ ] Add/Update/Remove product to the cart.
