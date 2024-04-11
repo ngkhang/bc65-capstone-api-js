@@ -127,6 +127,11 @@ section#homepage a:hover {
   opacity: 1;
 }
 
+section#adminPage > div {
+  background-image: url('../../../assets/img/backgroundAdmin.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+} /*# sourceMappingURL=main.css.map */
 /* Customer page */
 section#customerPage {
   background: var(--gray-1);
