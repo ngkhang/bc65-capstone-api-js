@@ -1,0 +1,71 @@
+/* Customer page */
+section#customerPage {
+  background: $gray-1;
+
+  form#search {
+    background: $white;
+
+    input {
+      outline: none;
+      width: 70%;
+      color: $gray-8;
+      &::placeholder {
+        color: $gray-4;
+      }
+    }
+    button {
+      outline: none;
+      font-weight: 500;
+      color: $gray-6;
+      &:hover {
+        color: $pink-2;
+      }
+
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        border-left: 2px solid $gray-4;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 26px;
+        margin-left: 2px;
+      }
+    }
+  }
+
+  #listCard {
+    .card {
+      box-shadow: 0 0.5rem 1rem $gray-4;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: 0.5s all ease-in-out;
+      &:hover {
+        box-shadow: 0 0.5rem 1rem $gray-6;
+      }
+
+      .btn-group {
+        button {
+          background: none;
+          border-radius: 50%;
+          border: 2px solid $pink-2;
+          color: $pink-2;
+
+          &.btn--down {
+            border-color: $gray-3;
+          }
+        }
+
+        input {
+          border-radius: 10px;
+        }
+      }
+
+      .btnAdd {
+        background: $pink-2;
+        color: $white;
+      }
+    }
+  }
+}

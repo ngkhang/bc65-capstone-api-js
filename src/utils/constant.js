@@ -1,38 +1,64 @@
+// Selectors
+const SELECTORS = {
+  // Selector common
+
+  // Selector into Admin page
+
+  // Selector into Customer page
+  LIST_CARD: 'section#customerPage div#listCard',
+  FORM_SEARCH: 'section#customerPage form',
+  INPUT_SEARCH: 'section#customerPage form#search input',
+  BTN_SEARCH: 'section#customerPage form#search button',
+};
+
 // Properties of Product object
 const PROPS_PRODUCT = {
-  id: {
+  id: 'id',
+  name: 'name',
+  price: 'price',
+  img: 'img',
+  screen: 'screen',
+  backCamera: 'backCamera',
+  frontCamera: 'frontCamera',
+  desc: 'desc',
+  type: 'type',
+};
+
+// Error fields of product
+const ERROR_FIELDS_PRODUCT = {
+  [PROPS_PRODUCT.id]: {
     fieldName: 'ID',
     idError: '#tbId',
   },
-  name: {
+  [PROPS_PRODUCT.name]: {
     fieldName: 'Tên sản phẩm',
     idError: '#tbName',
   },
-  price: {
+  [PROPS_PRODUCT.price]: {
     fieldName: 'Giá',
     idError: '#tbPrice',
   },
-  screen: {
+  [PROPS_PRODUCT.screen]: {
     fieldName: 'Màn hình',
     idError: '#tbScreen',
   },
-  backCamera: {
+  [PROPS_PRODUCT.backCamera]: {
     fieldName: 'Camera sau',
     idError: '#tbBackCamera',
   },
-  frontCamera: {
+  [PROPS_PRODUCT.frontCamera]: {
     fieldName: 'Camera trước',
     idError: '#tbFrontCamera',
   },
-  img: {
+  [PROPS_PRODUCT.img]: {
     fieldName: 'Ảnh',
     idError: '#tbImg',
   },
-  desc: {
+  [PROPS_PRODUCT.desc]: {
     fieldName: 'Mô tả',
     idError: '#tbDesc',
   },
-  type: {
+  [PROPS_PRODUCT.type]: {
     fieldName: 'Nhà sản xuất',
     idError: '#tbType',
   },

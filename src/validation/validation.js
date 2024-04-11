@@ -79,21 +79,41 @@ const handleValidate = (prod) => {
   let isValid = true;
 
   // Validate Name
-  isValid &= validateStringInput(prod.name, PROPS_PRODUCT.name);
+  isValid &= validateStringInput(prod.name, ERROR_FIELDS_PRODUCT.name);
   // Validate Price
-  isValid &= validatePrice(prod.price, PROPS_PRODUCT.price);
+  isValid &= validatePrice(prod.price, ERROR_FIELDS_PRODUCT.price);
   // Validation Screen
-  isValid &= validateStringInput(prod.screen, PROPS_PRODUCT.screen);
+  isValid &= validateStringInput(prod.screen, ERROR_FIELDS_PRODUCT.screen);
   // Validation Back Camera
-  isValid &= validateStringInput(prod.backCamera, PROPS_PRODUCT.backCamera);
+  isValid &= validateStringInput(
+    prod.backCamera,
+    ERROR_FIELDS_PRODUCT.backCamera
+  );
   // Validation Front Camera
-  isValid &= validateStringInput(prod.frontCamera, PROPS_PRODUCT.frontCamera);
+  isValid &= validateStringInput(
+    prod.frontCamera,
+    ERROR_FIELDS_PRODUCT.frontCamera
+  );
   // Validation Image
-  isValid &= validateStringInput(prod.image, PROPS_PRODUCT.image);
+  isValid &= validateStringInput(prod.image, ERROR_FIELDS_PRODUCT.image);
   // Validation Description
-  isValid &= validateStringInput(prod.description, PROPS_PRODUCT.description);
+  isValid &= validateStringInput(
+    prod.description,
+    ERROR_FIELDS_PRODUCT.description
+  );
   // Validation Type
-  isValid &= validateStringInput(prod.type, PROPS_PRODUCT.type);
+  isValid &= validateStringInput(prod.type, ERROR_FIELDS_PRODUCT.type);
 
   return isValid;
 };
+
+/*
+  Usage:
+
+  let product = {//...};
+  let isValid = handleValidate(product);
+
+  if(isVaild) {
+    // Handle logic...
+  }
+*/
