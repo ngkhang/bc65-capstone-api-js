@@ -166,9 +166,12 @@ const convertToSlug = (str) => {
  */
 const findDataByKey = (data, options) => {
   const { key, target } = options;
-  let targetSlug = convertToSlug(target);
+  let targetConvert = convertToSlug(target).replaceAll('-', '');
+
   return data.filter((item) => {
     if (!item.hasOwnProperty(key)) return false;
-    return convertToSlug(item[key]).includes(targetSlug);
+    const valueConvert = convertToSlug(item[key]).replaceAll('-', '');
+
+    return valueConvert.includes(targetConvert);
   });
 };

@@ -6,9 +6,11 @@ const SELECTORS = {
 
   // Selector into Customer page
   LIST_CARD: 'section#customerPage div#listCard',
-  FORM_SEARCH: 'section#customerPage form',
-  INPUT_SEARCH: 'section#customerPage form#search input',
-  BTN_SEARCH: 'section#customerPage form#search button',
+  FORM_SEARCH_BY_NAME: 'section#customerPage form#searchByName',
+  FORM_SEARCH_BY_TYPE: 'section#customerPage form#searchByType',
+  INPUT_SEARCH: 'section#customerPage form#searchByName input',
+  BTN_SEARCH: 'section#customerPage form#searchByName button',
+  BTN_SEARCH_TYPE: 'section#customerPage div#searchByType select#type',
 };
 
 // Properties of Product object
