@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Admin</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Font, Icons-->
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+
+    <!-- ---------- Main CSS ---------- -->
+    <link rel="stylesheet" href="../../../assets/css/main.css" />
+  </head>
+  <body>
+    <section id="adminPage">
+      <div class="">
+        <div class="container">
+          <div class="row vh-100 flex-column justify-content-between">
+            <h1 class="text-center mb-2">QUẢN LÝ SẢN PHẨM</h1>
+            <div class="flex-grow-1 d-flex flex-column">
+              <div class="row">
+                <!-- Btn Add -->
+                <div class="add mt-5">
+                  <div class="btnAdd">
+                    <button
+                      type="button"
+                      class="btn btn-primary py-3"
+                      data-toggle="modal"
+                      data-target="#exampleModal"
+                      data-whatever="@mdo"
+                    >
+                      Thêm sản phẩm
+                    </button>
+                  </div>
+                  <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                            Thêm sản phẩm
+                          </h5>
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label"
+                                >ID</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="txtAddMaSanPham"
+                              />
+                            </div>
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label"
+                                >Loại sản phẩm</label
+                              >
+                              <select
+                                class="form-control"
+                                id="txtAddLoaiSanPham"
+                              >
+                                <option>Samsung</option>
+                                <option>Iphone</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label"
+                                >Tên sản phẩm</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="txtAddTenSanPham"
+                              />
+                            </div>
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label"
+                                >Giá</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="txtAddGiaSanPham"
+                              />
+                            </div>
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label"
+                                >Màn hình</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="txtAddScreen"
+                              />
+                            </div>
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label"
+                                >Camera trước</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="txtAddFrontCamera"
+                              />
+                            </div>
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label"
+                                >Camera sau</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="txtAddBackCamera"
+                              />
+                            </div>
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label"
+                                >Ảnh</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="txtAddImgSanPham"
+                              />
+                            </div>
+                            <div class="form-group">
+                              <label for="message-text" class="col-form-label"
+                                >Mô tả</label
+                              >
+                              <textarea
+                                class="form-control"
+                                id="txtAddMoTa"
+                              ></textarea>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button type="button" class="btn btn-primary">
+                            Add
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Btn search -->
+                <div class="container mt-5">
+                  <div class="row">
+                    <div class="col-9 form-group">
+                      <input
+                        placeholder="Nhập tên sản phẩm"
+                        type="text"
+                        class="form-control"
+                        id="txtSearch"
+                      />
+                    </div>
+                    <div class="col-3 form-group">
+                      <button id="btnSearch" class="btn btn-primary">
+                        Search
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Table -->
+              <div class="flex-grow-1 d-flex justify-content-center">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Loại sản phẩm</th>
+                      <th>Tên sản phẩm</th>
+                      <th>Giá</th>
+                      <th>Màn hình</th>
+                      <th>Camera sau</th>
+                      <th>Camera trước</th>
+                      <th>Ảnh</th>
+                      <th>Mô tả</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbodySanPham"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section:  -->
+
+    <!-- Optional JavaScript -->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- ---------- Utils ---------- -->
+    <script src="./src/utils/constant.js"></script>
+    <script src="./src/utils/helper.js"></script>
+    <!-- ---------- Service ---------- -->
+    <script src="./src/services/api/ProductService.js"></script>
+    <!-- ---------- Models ---------- -->
+    <!-- ---------- Controllers ---------- -->
+    <!-- ---------- Main.js ---------- -->
+  </body>
+</html>
