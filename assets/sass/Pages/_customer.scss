@@ -2,7 +2,16 @@
 section#customerPage {
   background: $gray-1;
 
-  form#search {
+  div {
+    h2 {
+      @media (max-width: 576px) {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+    }
+  }
+
+  form#searchByName {
     background: $white;
 
     input {
