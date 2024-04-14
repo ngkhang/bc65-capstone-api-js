@@ -11,11 +11,13 @@ Thứ tự import file .scss
 
 // Helpers
 @import './Helpers/variables';
+@import './Helpers/mixin';
 // Vendors
 @import './Vendors/vendors.scss';
 // Base
 @import './Base/reset';
 // Components
+@import './Components/paymentModal';
 // Layout
 @import './Layout/footer';
 @import './Layout/header';

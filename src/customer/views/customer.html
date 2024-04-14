@@ -63,7 +63,7 @@
               </div>
               <!-- Dropdown -->
               <select name="type" class="custom-select h-100" id="type">
-                <option selected value="">Manufacture...</option>
+                <option selected value="">All Brands...</option>
                 <option value="iPhone">iPhone</option>
                 <option value="samsung">Samsung</option>
               </select>
@@ -74,6 +74,170 @@
         <!-- List of Card -->
         <div id="listCard" class="row">
           <!-- Item -->
+        </div>
+      </div>
+    </section>
+
+    <section id="payment">
+      <!-- Button trigger modal -->
+      <div id="btnTriggerPayment" class="position-fixed">
+        <button
+          type="button"
+          class="btn btn-light shadow-lg d-flex justify-content-center align-items-center rounded-circle"
+          data-toggle="modal"
+          data-target="#paymentModal"
+        >
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="badge rounded-circle position-absolute text-white"
+            >4</span
+          >
+        </button>
+      </div>
+
+      <!-- Payment Modal -->
+      <div
+        id="paymentModal"
+        class="modal fade"
+        tabindex="-1"
+        aria-labelledby="modalLabel"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+        >
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header align-items-center">
+              <h5 class="modal-title text-3xl" id="modalLabel">
+                Shopping Cart
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+              <!-- Layout Payment -->
+              <div class="table-responsive-xl">
+                <table class="table text-center">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Quality</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td class="text-left text-md-center">
+                        Samsung Galaxy M51
+                      </td>
+                      <td>5000</td>
+                      <td>
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn-primary btn btn--down"
+                          >
+                            <i class="fa-solid fa-minus"></i>
+                          </button>
+                          <div class="input-group px-1">
+                            <input
+                              type="text"
+                              class="form-control text-center"
+                              placeholder="1"
+                              value="1"
+                            />
+                          </div>
+                          <button type="button" class="btn-primary btn">
+                            <i class="fa-solid fa-plus"></i>
+                          </button>
+                        </div>
+                      </td>
+                      <td clas>
+                        <button type="button" class="btn btn-danger">
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Layout success -->
+              <div class="px-md-3 px-lg-4 d-none">
+                <div class="row">
+                  <div class="col-12 col-md-5 col-lg-6 mb-5 mb-lg-0">
+                    <h5 class="mb-3">Information</h5>
+                    <p class="mb-0">Your order-id is : 196</p>
+                    <p class="mb-0">Total paymnet : $10000</p>
+                    <p class="mb-0">
+                      Your order will be delivered to you in 3-5 working days
+                    </p>
+                  </div>
+                  <div class="col-12 col-md-7 col-lg-6">
+                    <h5 class="mb-3">List orders</h5>
+                    <div class="px-3">
+                      <ul>
+                        <li>Samsung Galaxy M51</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer d-block">
+              <!-- Payment -->
+              <div class="row">
+                <!-- Total -->
+                <div class="col-12 text-right">
+                  <p class="text-base">
+                    Total:
+                    <span class="ml-2 text-xl">$10000</span>
+                  </p>
+                </div>
+                <!-- Action -->
+                <div class="col-12">
+                  <div
+                    class="row flex-column align-items-center flex-sm-row justify-content-sm-end"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-primary col-12 col-sm-5 col-md-4 col-lg-3 mb-2 mb-sm-0 mr-sm-3"
+                    >
+                      Purchase
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-light col-12 col-sm-5 col-md-4 col-lg-3"
+                      data-dismiss="modal"
+                    >
+                      Clear Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Success -->
+              <div class="row justify-content-end d-none">
+                <p class="col-12 mb-3 text-center text-sm-right">Thank you</p>
+                <button
+                  type="button"
+                  class="btn btn-light col-12 col-sm-6 col-md-4"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

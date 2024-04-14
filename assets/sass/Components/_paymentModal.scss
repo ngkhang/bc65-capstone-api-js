@@ -1,0 +1,39 @@
+section#payment {
+  // Button trigger payment modal
+  div#btnTriggerPayment {
+    top: 20%;
+    right: 10px;
+
+    button {
+      height: 50px;
+      width: 50px;
+
+      i {
+        line-height: 1rem;
+        font-size: 1rem;
+      }
+      span {
+        top: 0;
+        right: 0;
+        background: var(--pink-2);
+      }
+    }
+  }
+
+  // Payment modal
+  div#paymentModal {
+    @include btn-group-count;
+
+    .modal-header {
+      h5 {
+        color: var(--pink-2);
+      }
+    }
+
+    .modal-body {
+      .input-group {
+        width: 60px;
+      }
+    }
+  }
+}

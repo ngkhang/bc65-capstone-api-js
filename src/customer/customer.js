@@ -26,7 +26,7 @@ getElements(SELECTORS.FORM_SEARCH_BY_NAME)[0].addEventListener(
     e.preventDefault();
     const inputSearch = getElements(SELECTORS.INPUT_SEARCH)[0];
 
-    const options = {
+    let options = {
       key: 'name',
       target: inputSearch.value,
     };
@@ -65,22 +65,25 @@ getElements(SELECTORS.FORM_SEARCH_BY_NAME)[0].addEventListener(
 );
 
 // Searching by product type (dropdown)
-getElements(SELECTORS.BTN_SEARCH_TYPE)[0].addEventListener('change', (event) => {
-  // 1. Get product type
-  let { id, value } = event.target;
-  let options = {
-    key: id,
-    target: value,
-  }
-  // 2. Find product by type and re-render UI
-  api
-    .getProducts()
-    .then((prods) => {
-      // Find product by type
-      let listProduct = findDataByKey(prods, options);
+getElements(SELECTORS.BTN_SEARCH_TYPE)[0].addEventListener(
+  'change',
+  (event) => {
+    // 1. Get product type
+    let { id, value } = event.target;
+    let options = {
+      key: id,
+      target: value,
+    };
+    // 2. Find product by type and re-render UI
+    api
+      .getProducts()
+      .then((prods) => {
+        // Find product by type
+        let listProduct = findDataByKey(prods, options);
 
-      // Re-render UI
-      render(listProduct, SELECTORS.LIST_CARD, getTemplateCard);
-    })
-    .catch((err) => console.log(err))
-})
+        // Re-render UI
+        render(listProduct, SELECTORS.LIST_CARD, getTemplateCard);
+      })
+      .catch((err) => console.log(err));
+  }
+);

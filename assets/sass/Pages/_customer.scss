@@ -54,22 +54,7 @@ section#customerPage {
         box-shadow: 0 0.5rem 1rem $gray-6;
       }
 
-      .btn-group {
-        button {
-          background: none;
-          border-radius: 50%;
-          border: 2px solid $pink-2;
-          color: $pink-2;
-
-          &.btn--down {
-            border-color: $gray-3;
-          }
-        }
-
-        input {
-          border-radius: 10px;
-        }
-      }
+      @include btn-group-count;
 
       .btnAdd {
         background: $pink-2;
