@@ -24,87 +24,6 @@ const displayErrorMessage = (idError, messError) => {
 };
 
 /**
- * Create a template for a product card
- * @param {object} prod - Object representing product data
- * @return {string} - HTML string representing the product card
- */
-const getTemplateCard = (prod) => {
-  return `
-  <div class="col-12 col-sm-6 col-lg-4 mb-4">
-    <div class="card h-100"
-      id="prod-${prod[PROPS_PRODUCT.id]}"
-    >
-      <div class="d-flex justify-content-center p-3">
-        <img
-          class="card-img-top img-fluid w-75"
-          src="${prod[PROPS_PRODUCT.img]}"
-          alt="${prod[PROPS_PRODUCT.name]}"
-        />
-      </div>
-
-      <div class="card-body d-flex flex-column justify-content-between">
-        <h5 class="card-title">${prod[PROPS_PRODUCT.name]}</h5>
-        <div class="mb-4">
-          <div
-            class="d-flex justify-content-between align-items-center flex-wrap"
-          >
-            <h6 class="card-subtitle text-muted mb-2">
-              ${prod[PROPS_PRODUCT.type]}
-            </h6>
-            <span
-              class="font-weight-bolder mb-2"
-              style="font-size: 20px"
-            >
-              ${prod[PROPS_PRODUCT.price]}
-            </span>
-          </div>
-          <p class="card-text text-truncate">${prod[PROPS_PRODUCT.desc]}</p>
-        </div>
-
-        <div
-          class="btn-toolbar justify-content-between"
-          role="toolbar"
-          aria-label="Toolbar with button groups"
-        >
-          <div
-            class="btn-group flex-grow-0 mr-sm-2 mr-lg-4"
-            role="group"
-          >
-            <button type="button" class="btn btn--down">
-              <i class="fa-solid fa-minus"></i>
-            </button>
-
-            <div class="input-group px-1" style="width: 60px">
-              <input
-                type="text"
-                class="form-control text-center"
-                placeholder="1"
-                value="1"
-              />
-            </div>
-
-            <button type="button" class="btn">
-              <i class="fa-solid fa-plus"></i>
-            </button>
-          </div>
-
-          <button
-            type="button"
-            class="btn btnAdd px-4 px-sm-0 flex-sm-grow-1 px-xl-4"
-          >
-            <i class="fa-solid fa-cart-plus px-sm-0"></i>
-            <span class="d-inline-block d-sm-none d-md-inline-block">
-              Add
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  `;
-};
-
-/**
  * Render data as HTML using a specified template function
  * @param {array} data - Array of objects representing product data
  * @param {string} selector - CSS selector of the element where the HTML will be rendered
@@ -174,4 +93,22 @@ const findDataByKey = (data, options) => {
 
     return valueConvert.includes(targetConvert);
   });
+};
+
+/**
+ * Process product URI based on action.
+ * @param {Object} value - The product data.
+ * @param {string} action - The action to perform: 'encode' or 'decode'.
+ * @return {string|number|Object} - The processed URI if action is 'encode', the decoded object if action is 'decode', otherwise -1.
+ */
+const processProductURI = (value, action) => {
+  switch (action) {
+    case 'encode':
+      return encodeURI(JSON.stringify(value));
+    case 'decode':
+      return JSON.parse(decodeURI(value));
+    default:
+      console.error('Invalid action:', action);
+      return -1;
+  }
 };
