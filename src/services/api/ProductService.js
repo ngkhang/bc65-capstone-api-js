@@ -79,41 +79,41 @@ function customAxios() {
 
 const connectAPI = customAxios();
 
-// const api = {
-//   /**
-//    * Get a list of products
-//    * @return {Arrays<Object>}
-//    */
-//   getProducts: () => connectAPI(ACTIONS.GET_LIST_PRODUCTS, null, null),
+const api = {
+  /**
+   * Get a list of products
+   * @return {Arrays<Object>}
+   */
+  getProducts: () => connectAPI(ACTIONS.GET_LIST_PRODUCTS, null, null),
 
-//   /**
-//    * Get a product by ID
-//    * @param {number} idProduct - ID of products
-//    * @return {Object} Product object
-//    */
-//   getProductByID: (idProduct) => connectAPI(ACTIONS.GET_PRODUCT, idProduct),
+  /**
+   * Get a product by ID
+   * @param {number} idProduct - ID of products
+   * @return {Object} Product object
+   */
+  getProductByID: (idProduct) => connectAPI(ACTIONS.GET_PRODUCT, idProduct),
 
-//   /**
-//    * Create a new product
-//    * @param {Object} data - Product constructor
-//    */
-//   createProduct: (data) => connectAPI(ACTIONS.CREATE_PRODUCT, null, data),
+  /**
+   * Create a new product
+   * @param {Object} data - Product constructor
+   */
+  createProduct: (data) => connectAPI(ACTIONS.CREATE_PRODUCT, null, data),
 
-//   /**
-//    * Update a product
-//    * @param {number} idProduct - ID of Product
-//    * @param {Object} data - Product constructor
-//    */
-//   updateProduct: (idProduct, data) =>
-//     connectAPI(ACTIONS.UPDATE_PRODUCT, idProduct, data),
+  /**
+   * Update a product
+   * @param {number} idProduct - ID of Product
+   * @param {Object} data - Product constructor
+   */
+  updateProduct: (idProduct, data) =>
+    connectAPI(ACTIONS.UPDATE_PRODUCT, idProduct, data),
 
-//   /**
-//    * Delete a product
-//    * @param {number} idProduct - ID of Product
-//    */
-//   deleteProduct: (idProduct) =>
-//     connectAPI(ACTIONS.DELETE_PRODUCT, idProduct, null),
-// };
+  /**
+   * Delete a product
+   * @param {number} idProduct - ID of Product
+   */
+  deleteProduct: (idProduct) =>
+    connectAPI(ACTIONS.DELETE_PRODUCT, idProduct, null),
+};
 
 // Example usage: Get a products by ID
 // api
