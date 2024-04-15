@@ -163,10 +163,15 @@ section#homepage a:hover {
   opacity: 1;
 }
 
+<<<<<<< HEAD
 section#adminPage > div {
   background-image: url("../../../assets/img/backgroundAdmin.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+=======
+body#adminBody {
+  background: #e7ecf9;
+>>>>>>> khanhhung
 }
 
 /* Customer page */
@@ -201,7 +206,11 @@ section#customerPage form#searchByName button {
 section#customerPage form#searchByName button:hover {
   color: var(--pink-2);
 }
+<<<<<<< HEAD
 section#customerPage form#searchByName button::before {
+=======
+section#customerPage form#search button::before {
+>>>>>>> khanhhung
   content: "";
   display: inline-block;
   position: absolute;

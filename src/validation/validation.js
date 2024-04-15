@@ -117,3 +117,53 @@ const handleValidate = (prod) => {
     // Handle logic...
   }
 */
+
+//validation khánh hưng
+function kiemTraRong(value, idErr, message) {
+  if (value.trim() === '') {
+    getEle(idErr).innerHTML = message;
+    return false;
+  } else {
+    getEle(idErr).innerHTML = '';
+    return true;
+  }
+}
+
+function kiemTraSo(value, idErr, message) {
+  const re = /^[0-9]+$/;
+
+  var isNumber = re.test(value);
+
+  if (isNumber) {
+    getEle(idErr).innerHTML = '';
+    return true;
+  } else {
+    getEle(idErr).innerHTML = message;
+    return false;
+  }
+}
+
+function kiemTraTrung(id, array, idErr, message) {
+  var viTri = array.findIndex(function (sv) {
+    return sv.maSV === id;
+  });
+
+  if (viTri != -1) {
+    getEle(idErr).innerHTML = message;
+    return false;
+  } else {
+    getEle(idErr).innerHTML = '';
+    return true;
+  }
+}
+
+function kiemTraDoDai(value, idErr, min, max, message) {
+  var length = value.length;
+  if (length >= min && length <= max) {
+    getEle(idErr).innerHTML = '';
+    return true;
+  } else {
+    getEle(idErr).innerHTML = message;
+    return false;
+  }
+}

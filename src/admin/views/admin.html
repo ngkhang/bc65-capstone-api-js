@@ -9,213 +9,254 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <!-- Font, Icons-->
-
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-      crossorigin="anonymous"
-    />
-
     <!-- ---------- Main CSS ---------- -->
     <link rel="stylesheet" href="../../../assets/css/main.css" />
   </head>
-  <body>
+  <body id="adminBody">
     <section id="adminPage">
-      <div class="">
-        <div class="container">
-          <div class="row vh-100 flex-column justify-content-between">
-            <h1 class="text-center mb-2">QUẢN LÝ SẢN PHẨM</h1>
-            <div class="flex-grow-1 d-flex flex-column">
-              <div class="row">
-                <!-- Btn Add -->
-                <div class="add mt-5">
-                  <div class="btnAdd">
-                    <button
-                      type="button"
-                      class="btn btn-primary py-3"
-                      data-toggle="modal"
-                      data-target="#exampleModal"
-                      data-whatever="@mdo"
-                    >
-                      Thêm sản phẩm
-                    </button>
-                  </div>
-                  <div
-                    class="modal fade"
-                    id="exampleModal"
-                    tabindex="-1"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">
-                            Thêm sản phẩm
-                          </h5>
-                          <button
-                            type="button"
-                            class="close"
-                            data-dismiss="modal"
-                            aria-label="Close"
-                          >
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <form>
-                            <div class="form-group">
-                              <label for="recipient-name" class="col-form-label"
-                                >ID</label
-                              >
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="txtAddMaSanPham"
-                              />
-                            </div>
-                            <div class="form-group">
-                              <label for="recipient-name" class="col-form-label"
-                                >Loại sản phẩm</label
-                              >
-                              <select
-                                class="form-control"
-                                id="txtAddLoaiSanPham"
-                              >
-                                <option>Samsung</option>
-                                <option>Iphone</option>
-                              </select>
-                            </div>
-                            <div class="form-group">
-                              <label for="recipient-name" class="col-form-label"
-                                >Tên sản phẩm</label
-                              >
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="txtAddTenSanPham"
-                              />
-                            </div>
-                            <div class="form-group">
-                              <label for="recipient-name" class="col-form-label"
-                                >Giá</label
-                              >
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="txtAddGiaSanPham"
-                              />
-                            </div>
-                            <div class="form-group">
-                              <label for="recipient-name" class="col-form-label"
-                                >Màn hình</label
-                              >
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="txtAddScreen"
-                              />
-                            </div>
-                            <div class="form-group">
-                              <label for="recipient-name" class="col-form-label"
-                                >Camera trước</label
-                              >
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="txtAddFrontCamera"
-                              />
-                            </div>
-                            <div class="form-group">
-                              <label for="recipient-name" class="col-form-label"
-                                >Camera sau</label
-                              >
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="txtAddBackCamera"
-                              />
-                            </div>
-                            <div class="form-group">
-                              <label for="recipient-name" class="col-form-label"
-                                >Ảnh</label
-                              >
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="txtAddImgSanPham"
-                              />
-                            </div>
-                            <div class="form-group">
-                              <label for="message-text" class="col-form-label"
-                                >Mô tả</label
-                              >
-                              <textarea
-                                class="form-control"
-                                id="txtAddMoTa"
-                              ></textarea>
-                            </div>
-                          </form>
-                        </div>
-                        <div class="modal-footer">
-                          <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-dismiss="modal"
-                          >
-                            Close
-                          </button>
-                          <button type="button" class="btn btn-primary">
-                            Add
-                          </button>
-                        </div>
-                      </div>
+      <div class="container">
+        <!-- h1 -->
+        <div class="row justify-content-center text-center mb-2">
+          <h2 class="text-5xl py-3 py-md-4">Product Management</h2>
+        </div>
+        <!-- btn add -->
+        <div class="row align-items-center">
+          <div class="col-6">
+            <div class="add">
+              <div class="btnAdd">
+                <button
+                  type="button"
+                  class="btn btn-primary py-2"
+                  data-toggle="modal"
+                  data-target="#myModal"
+                  id="btnThemSP"
+                >
+                  Thêm sản phẩm
+                </button>
+              </div>
+
+              <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Thêm sản phẩm
+                      </h5>
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                     </div>
-                  </div>
-                </div>
-                <!-- Btn search -->
-                <div class="container mt-5">
-                  <div class="row">
-                    <div class="col-9 form-group">
-                      <input
-                        placeholder="Nhập tên sản phẩm"
-                        type="text"
-                        class="form-control"
-                        id="txtSearch"
-                      />
+                    <div class="modal-body">
+                      <form>
+                        <div class="row">
+                          <div class="form-group col-6">
+                            <label for="recipient-name" class="col-form-label"
+                              >ID</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="id"
+                              disabled
+                              placeholder="ID sẽ tự động cập nhật"
+                            />
+                            <span
+                              id="spanID"
+                              style="color: red; font-size: 12px"
+                            ></span>
+                          </div>
+                          <div class="form-group col-6">
+                            <label for="recipient-name" class="col-form-label"
+                              >Loại sản phẩm</label
+                            >
+                            <select class="form-control" id="type">
+                              <option value="Samsung">Samsung</option>
+                              <option value="Iphone">Iphone</option>
+                            </select>
+                            <span
+                              id="spanType"
+                              style="color: red; font-size: 12px"
+                            ></span>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="form-group col-6">
+                            <label for="recipient-name" class="col-form-label"
+                              >Tên sản phẩm</label
+                            >
+                            <input type="text" class="form-control" id="name" />
+                            <span
+                              id="spanName"
+                              style="color: red; font-size: 12px"
+                            ></span>
+                          </div>
+                          <div class="form-group col-6">
+                            <label for="recipient-name" class="col-form-label"
+                              >Giá</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="price"
+                            />
+                            <span
+                              id="spanPrice"
+                              style="color: red; font-size: 12px"
+                            ></span>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label"
+                            >Màn hình</label
+                          >
+                          <input type="text" class="form-control" id="screen" />
+                          <span
+                            id="spanScreen"
+                            style="color: red; font-size: 12px"
+                          ></span>
+                        </div>
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label"
+                            >Camera trước</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="frontCamera"
+                          />
+                          <span
+                            id="spanFrontCamera"
+                            style="color: red; font-size: 12px"
+                          ></span>
+                        </div>
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label"
+                            >Camera sau</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="backCamera"
+                          />
+                          <span
+                            id="spanBackCamera"
+                            style="color: red; font-size: 12px"
+                          ></span>
+                        </div>
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label"
+                            >Ảnh</label
+                          >
+                          <input type="text" class="form-control" id="img" />
+                          <span
+                            id="spanImg"
+                            style="color: red; font-size: 12px"
+                          ></span>
+                        </div>
+                        <div class="form-group">
+                          <label for="message-text" class="col-form-label"
+                            >Mô tả</label
+                          >
+                          <textarea class="form-control" id="desc"></textarea>
+                          <span
+                            id="spanDesc"
+                            style="color: red; font-size: 12px"
+                          ></span>
+                        </div>
+                      </form>
                     </div>
-                    <div class="col-3 form-group">
-                      <button id="btnSearch" class="btn btn-primary">
-                        Search
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="handleAddNewProduct"
+                        onclick="handleAddNewProduct()"
+                      >
+                        Add
+                      </button>
+                      <button
+                        class="btn btn-warning"
+                        onclick="updateProduct()"
+                        id="updateProduct"
+                      >
+                        Cập nhật
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- Table -->
-              <div class="flex-grow-1 d-flex justify-content-center">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Loại sản phẩm</th>
-                      <th>Tên sản phẩm</th>
-                      <th>Giá</th>
-                      <th>Màn hình</th>
-                      <th>Camera sau</th>
-                      <th>Camera trước</th>
-                      <th>Ảnh</th>
-                      <th>Mô tả</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody id="tbodySanPham"></tbody>
-                </table>
+            </div>
+          </div>
+          <!-- sắp xếp -->
+        </div>
+        <!-- search -->
+        <div class="row">
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-7 form-group">
+                <input
+                  placeholder="Nhập tên sản phẩm"
+                  type="text"
+                  class="form-control"
+                  id="txtSearch"
+                />
+              </div>
+              <div class="col-2 form-group">
+                <button
+                  id="btnSearch"
+                  class="btn btn-primary"
+                  onclick="searchProductByName()"
+                >
+                  <i class="fa fa-search"></i>
+                  Search
+                </button>
+              </div>
+              <div
+                class="col-3 d-flex align-items-center justify-content-around form-group"
+              >
+                <span>Sắp xếp theo giá</span>
+                <button id="btnSapXepTuBeDenLon" class="btn btn-info">
+                  <i class="fa fa-arrow-up"></i>
+                </button>
+                <button id="btnSapXepTuLonDenBe" class="btn btn-info">
+                  <i class="fa fa-arrow-down"></i>
+                </button>
               </div>
             </div>
+          </div>
+        </div>
+        <!-- table -->
+        <div class="row">
+          <div class="table-responsive">
+            <table class="table text-center bg-white">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Type</th>
+                  <th>Tên sản phẩm</th>
+                  <th>Giá</th>
+                  <th>Màn hình</th>
+                  <th>Camera</th>
+                  <th>Ảnh</th>
+                  <th>Mô tả</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="tbodySanPham"></tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -238,12 +279,19 @@
     <!-- Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- ---------- Utils ---------- -->
-    <script src="./src/utils/constant.js"></script>
-    <script src="./src/utils/helper.js"></script>
+    <script src="../../utils/constant.js"></script>
+    <script src="../../utils/helper.js"></script>
+    <!-- ---------- Validation ---------- -->
+    <script src="../../validation/validation.js"></script>
     <!-- ---------- Service ---------- -->
-    <script src="./src/services/api/ProductService.js"></script>
+    <script src="../../services/api/ProductService.js"></script>
     <!-- ---------- Models ---------- -->
+    <script src="../models/SanPham.js"></script>
     <!-- ---------- Controllers ---------- -->
+    <script src="../controller/controller.js"></script>
+    <!-- ---------- Util ---------- -->
+    <script src="../util/util.js"></script>
     <!-- ---------- Main.js ---------- -->
+    <script src="../admin.js"></script>
   </body>
 </html>

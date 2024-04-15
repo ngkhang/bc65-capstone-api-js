@@ -3,6 +3,8 @@ const SELECTORS = {
   // Selector common
 
   // Selector into Admin page
+  INPUT_FORM_ADMIN:
+    'section#adminPage form input, section#adminPage form select, section#adminPage form textarea',
 
   // Selector into Customer page
   LIST_CARD: 'section#customerPage div#listCard',

@@ -76,13 +76,14 @@ const convertToSlug = (str) => {
 };
 
 /**
- * Filter data by a specific key and target value
- * @param {array} data - Array of objects to search
- * @param {object} options - Options object containing 'target' and 'key' properties
- * @param {string} options.key - Key name to search for the target value
- * @param {string} options.target - Target value to search for
- * @returns {array} - Array of objects matching the target value in the specified key
- */
+ 
+Filter data by a specific key and target value
+@param {array} data - Array of objects to search
+@param {object} options - Options object containing 'target' and 'key' properties
+@param {string} options.key - Key name to search for the target value
+@param {string} options.target - Target value to search for
+@returns {array} - Array of objects matching the target value in the specified key
+*/
 const findDataByKey = (data, options) => {
   const { key, target } = options;
   let targetConvert = convertToSlug(target).replaceAll('-', '');
