@@ -1,6 +1,8 @@
 // Define token, base URL and endpoint
 const TOKEN = '65faf78814650eb21008ea55';
 const BASE_URL = `https://${TOKEN}.mockapi.io/api/v1`;
+const BASE_URL_V2 =
+  'https://65faf78814650eb21008ea55.mockapi.io/api/v1/products';
 
 // List endpoint
 const END_POINT = {
@@ -77,44 +79,83 @@ function customAxios() {
 
 const connectAPI = customAxios();
 
-const api = {
-  /**
-   * Get a list of products
-   * @return {Arrays<Object>}
-   */
-  getProducts: () => connectAPI(ACTIONS.GET_LIST_PRODUCTS, null, null),
+// const api = {
+//   /**
+//    * Get a list of products
+//    * @return {Arrays<Object>}
+//    */
+//   getProducts: () => connectAPI(ACTIONS.GET_LIST_PRODUCTS, null, null),
 
-  /**
-   * Get a product by ID
-   * @param {number} idProduct - ID of products
-   * @return {Object} Product object
-   */
-  getProductByID: (idProduct) => connectAPI(ACTIONS.GET_PRODUCT, idProduct),
+//   /**
+//    * Get a product by ID
+//    * @param {number} idProduct - ID of products
+//    * @return {Object} Product object
+//    */
+//   getProductByID: (idProduct) => connectAPI(ACTIONS.GET_PRODUCT, idProduct),
 
-  /**
-   * Create a new product
-   * @param {Object} data - Product constructor
-   */
-  createProduct: (data) => connectAPI(ACTIONS.CREATE_PRODUCT, null, data),
+//   /**
+//    * Create a new product
+//    * @param {Object} data - Product constructor
+//    */
+//   createProduct: (data) => connectAPI(ACTIONS.CREATE_PRODUCT, null, data),
 
-  /**
-   * Update a product
-   * @param {number} idProduct - ID of Product
-   * @param {Object} data - Product constructor
-   */
-  updateProduct: (idProduct, data) =>
-    connectAPI(ACTIONS.UPDATE_PRODUCT, idProduct, data),
+//   /**
+//    * Update a product
+//    * @param {number} idProduct - ID of Product
+//    * @param {Object} data - Product constructor
+//    */
+//   updateProduct: (idProduct, data) =>
+//     connectAPI(ACTIONS.UPDATE_PRODUCT, idProduct, data),
 
-  /**
-   * Delete a product
-   * @param {number} idProduct - ID of Product
-   */
-  deleteProduct: (idProduct) =>
-    connectAPI(ACTIONS.DELETE_PRODUCT, idProduct, null),
-};
+//   /**
+//    * Delete a product
+//    * @param {number} idProduct - ID of Product
+//    */
+//   deleteProduct: (idProduct) =>
+//     connectAPI(ACTIONS.DELETE_PRODUCT, idProduct, null),
+// };
 
 // Example usage: Get a products by ID
 // api
 //   .getProductByID(1)
 //   .then((data) => console.log(data))
 //   .catch((err) => console.log(err.messenge));
+
+const productServ = {
+  getProduct: function (name) {
+    return axios({
+      url: BASE_URL_V2,
+      method: 'GET',
+      params: {
+        name: name || undefined,
+      },
+    });
+  },
+
+  delProductByID: function (id) {
+    return axios({
+      url: `${BASE_URL_V2}/${id}`,
+      method: 'DELETE',
+    });
+  },
+  addProduct: function (data) {
+    return axios({
+      url: BASE_URL_V2,
+      method: 'POST',
+      data: data,
+    });
+  },
+  getProductByID: function (id) {
+    return axios({
+      url: `${BASE_URL_V2}/${id}`,
+      method: 'GET',
+    });
+  },
+  updateProductByID: function (id, data) {
+    return axios({
+      url: `${BASE_URL_V2}/${id}`,
+      method: 'PUT',
+      data: data,
+    });
+  },
+};
