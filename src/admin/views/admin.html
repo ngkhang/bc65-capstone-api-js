@@ -30,6 +30,7 @@
                   data-toggle="modal"
                   data-target="#myModal"
                   id="btnThemSP"
+                  style="border-radius: 12px"
                 >
                   Thêm sản phẩm
                 </button>
@@ -205,39 +206,42 @@
         <!-- search -->
         <div class="row">
           <div class="container mt-5">
-            <div class="row">
-              <div class="col-7 form-group">
-                <input
-                  placeholder="Nhập tên sản phẩm"
-                  type="text"
-                  class="form-control"
-                  id="txtSearch"
-                />
-              </div>
-              <div class="col-2 form-group">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Nhập tên sản phẩm"
+                aria-describedby="button-addon4"
+                id="txtSearch"
+              />
+              <div class="input-group-append" id="button-addon4 btnSearch">
                 <button
-                  id="btnSearch"
-                  class="btn btn-primary"
+                  class="btn btn-outline-secondary"
+                  type="button"
                   onclick="searchProductByName()"
                 >
                   <i class="fa fa-search"></i>
                   Search
                 </button>
               </div>
-              <div
-                class="col-3 d-flex align-items-center justify-content-around form-group"
-              >
-                <span>Sắp xếp theo giá</span>
-                <button id="btnSapXepTuBeDenLon" class="btn btn-info">
-                  <i class="fa fa-arrow-up"></i>
-                </button>
-                <button id="btnSapXepTuLonDenBe" class="btn btn-info">
-                  <i class="fa fa-arrow-down"></i>
-                </button>
-              </div>
             </div>
           </div>
         </div>
+
+        <div class="row mt-4 justify-content-end">
+          <div
+            class="d-flex align-items-center justify-content-around form-group"
+          >
+            <span class="mr-3">Sắp xếp theo giá</span>
+            <button id="btnSapXepTuBeDenLon" class="btn btn-dark mr-1">
+              <i class="fa fa-arrow-up"></i>
+            </button>
+            <button id="btnSapXepTuLonDenBe" class="btn btn-dark mr-3">
+              <i class="fa fa-arrow-down"></i>
+            </button>
+          </div>
+        </div>
+
         <!-- table -->
         <div class="row">
           <div class="table-responsive">

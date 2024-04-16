@@ -329,21 +329,22 @@ function renderLaiSauKhiSapXep(danhSachSapXep) {
   tbody.innerHTML = '';
 
   danhSachSapXep.forEach(function (newproduct) {
-    var row = `<tr>
-            <td class="centered-text">${newproduct.id}</td>
-            <td class="centered-text">${newproduct.type}</td>
-            <td class="centered-text">${newproduct.name}</td>
-            <td class="centered-text">${newproduct.price}</td>
-            <td class="centered-text">${newproduct.screen}</td>
-            <td class="centered-text">${newproduct.backCamera}</td>
-            <td class="centered-text">${newproduct.frontCamera}</td>
-            <td class="centered-text"><img src="${newproduct.img}" alt="" style="width:130px"/></td>
-            <td class="centered-text">${newproduct.desc}</td>
-            <td>
-              <button class="btn btn-warning" onclick="editSanPham('${newproduct.id}')">Edit</button>
-              <button class="btn btn-danger mt-3" onclick="delSanPham('${newproduct.id}')">Del</button>
-          </td>
-        </tr>`;
+    var row = `
+            <tr>
+              <td>${newproduct.id}</td>
+              <td>${newproduct.type}</td>
+              <td>${newproduct.name}</td>
+              <td>${newproduct.price}</td>
+              <td>${newproduct.screen}</td>
+              <td>${newproduct.backCamera} <br> <br> ${newproduct.frontCamera}</td>
+              <td><img src="${newproduct.img}" alt="" class="img-fluid"/></td>
+              <td>${newproduct.desc}</td>
+              <td>
+                  <button class="btn btn-warning" onclick="editSanPham('${newproduct.id}')">Edit</button>
+                  <button class="btn btn-danger mt-3" onclick="delSanPham('${newproduct.id}')">Del</button>
+              </td>
+            </tr>
+          `;
     tbody.innerHTML += row;
   });
   var rows = tbody.querySelectorAll('tr');
