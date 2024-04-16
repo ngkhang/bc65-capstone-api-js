@@ -18,8 +18,8 @@ List of tasks or features that are common for both customer and admin roles:
   - [x] Layout
   - [x] Responsive
 - [x] Validation input
-- [ ] Refactor code and write documentation
-- [ ] Deploy and record/upload video demo project.
+- [x] Refactor code and write documentation
+- [x] Deploy and record/upload video demo project.
 
 ## Customer Tasks
 
@@ -28,34 +28,32 @@ List of tasks or features specific to the customer role:
 - UI Customer
   - [x] Layout customer page
   - [x] Responsive
-  - [ ] Layout Payment
-- [ ] Handle logic
+  - [x] Layout Payment
+- [x] Handle logic
   - The perform with Products
-    - [ ] Get list of products.
+    - [x] Get list of products.
     - [x] Apply keyword (product type) to product search
   - The perform with Cart
-    - [ ] Get information about the customer's cart
-    - [ ] Add/Update/Remove product to the cart.
-    - [ ] Store cart in local storage
+    - [x] Get information about the customer's cart
+    - [x] Add/Update/Remove product to the cart.
+    - [x] Store cart in local storage
   - The perform with Payment
-    - [ ] Get bill and alert of customer
+    - [x] Get bill and alert of customer
 
 ## Admin Tasks
 
 List of tasks or features specific to the admin role:
 
 - UI Admin
-  - [ ] Layout
-  - [ ] Form of product
-  - [ ] Responsive
+  - [x] Layout
+  - [x] Form of product
+  - [x] Responsive
 - Handle logic
-  - [ ] Get list of products.
-  - [ ] Add/Update/Delete product.
-  - [ ] Apply keyword (product name) to product search
-  - [ ] Sort products by keyword (`keyword = price`)
+  - [x] Get list of products.
+  - [x] Add/Update/Delete product.
+  - [x] Apply keyword (product name) to product search
+  - [x] Sort products by keyword (`keyword = price`)
 
 ## Bonus Tasks
 
-- [ ] Build Spinner component
-- [ ] Pagination or "More" button
-- [ ] Error handling for API requests
+- [x] Build Spinner component

@@ -7,9 +7,6 @@
   - [About this project](#about-this-project)
   - [Technologies Used](#technologies-used)
   - [Demo](#demo)
-    - [Screenshots](#screenshots)
-    - [Link](#link)
-  - [Folder Structure](#folder-structure)
   - [Authors](#authors)
 
 </details>
@@ -18,8 +15,8 @@
 
 ## About this project
 
-- Description:
 - Timeline project:
+  ![Timeline project](./docs/images/timeline.png)
 
 ## Technologies Used
 
@@ -32,28 +29,10 @@
 
 ## Demo
 
-### Screenshots
-
-<details>
-<summary><strong>Toggle Show/Hide:</strong></summary>
-
-</details>
-
-### Link
-
-- [Live Demo](https://)
-- [Youtube](https://)
+- [Live Demo](https://ngkhang.github.io/bc65-capstone-api-js/)
+- [Youtube](https://youtu.be/BEzJPfc7EG0)
 - [Github](https://github.com/ngkhang/bc65-capstone-api-js)
-- [Link Backup: Google Drive](https://)
-
----
-
-## Folder Structure
-
-- Structure project:
-  
-  ``` markdown
-  ```
+- [Link Backup: Google Drive](https://drive.google.com/drive/folders/1mtfLlndP29VZUTqCSkYfAde_0T1hyjAS?usp=sharing)
 
 ---
 
