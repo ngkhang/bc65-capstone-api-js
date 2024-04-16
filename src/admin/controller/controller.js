@@ -23,8 +23,7 @@ function rendersanPhamList(danhSachSP) {
           <td>${sanPham.name}</td>
           <td>${sanPham.price}</td>
           <td>${sanPham.screen}</td>
-          <td>${sanPham.backCamera} <br> ${sanPham.frontCamera}</td>
-          
+          <td>${sanPham.backCamera} <br> <br> ${sanPham.frontCamera}</td>
           <td><img src="${sanPham.img}" alt="" class="img-fluid"/></td>
           <td>${sanPham.desc}</td>
           <td>
