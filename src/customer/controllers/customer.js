@@ -6,6 +6,17 @@ const getTotalPrice = (objMapProd) => {
   );
 };
 
+// Handle spinner
+const handleSpinner = (selectorSpinner, selectorTarget, isLoading) => {
+  if (isLoading) {
+    getElements(selectorSpinner)[0].classList.add('d-flex');
+    getElements(selectorTarget)[0].classList.add('d-none');
+  } else {
+    getElements(selectorSpinner)[0].classList.remove('d-flex');
+    getElements(selectorTarget)[0].classList.remove('d-none');
+  }
+};
+
 const setLocalStorageByKey = (key, mapObject) => {
   let convertCartToJSON = JSON.stringify([...mapObject.entries()]);
   localStorage.setItem(key, convertCartToJSON);
@@ -23,16 +34,18 @@ if (!getLocalStorageByKey('Cart')) {
   Cart = new Map();
 } else {
   Cart = getLocalStorageByKey('Cart');
-  // getTemplateProcessPayment([...Cart.values()]);
-  getElements('section#payment div#btnTriggerPayment span')[0].innerHTML =
-    Cart.size;
+  getElements(SELECTORS.COUNT_CART)[0].innerHTML = Cart.size;
 }
 
 // Render products
 window.onload = () => {
+  handleSpinner(SELECTORS.SPINNER, SELECTORS.LIST_CARD, true);
   api
     .getProducts()
-    .then((data) => render(data, SELECTORS.LIST_CARD, getTemplateCard))
+    .then((data) => {
+      handleSpinner(SELECTORS.SPINNER, SELECTORS.LIST_CARD, false);
+      render(data, SELECTORS.LIST_CARD, getTemplateCard);
+    })
     .catch((err) => console.log(err.messenge));
 };
 
@@ -48,9 +61,11 @@ getElements(SELECTORS.FORM_SEARCH_BY_NAME)[0].addEventListener(
       target: inputSearch.value,
     };
 
+    handleSpinner(SELECTORS.SPINNER, SELECTORS.LIST_CARD, true);
     api
       .getProducts()
       .then((products) => {
+        handleSpinner(SELECTORS.SPINNER, SELECTORS.LIST_CARD, false);
         // Case 1: Input is empty or spacing
         if (options.target.trim() === '') {
           render(products, SELECTORS.LIST_CARD, getTemplateCard);
@@ -91,10 +106,12 @@ getElements(SELECTORS.BTN_SEARCH_TYPE)[0].addEventListener(
       key: id,
       target: value,
     };
+    handleSpinner(SELECTORS.SPINNER, SELECTORS.LIST_CARD, true);
     // 2. Find product by type and re-render UI
     api
       .getProducts()
       .then((prods) => {
+        handleSpinner(SELECTORS.SPINNER, SELECTORS.LIST_CARD, false);
         // Find product by type
         let listProduct = findDataByKey(prods, options);
 
@@ -127,8 +144,7 @@ const handleAddProduct = (selectInput, prodURI) => {
 
   setLocalStorageByKey('Cart', Cart);
 
-  getElements('section#payment div#btnTriggerPayment span')[0].innerHTML =
-    Cart.size;
+  getElements(SELECTORS.COUNT_CART)[0].innerHTML = Cart.size;
   getTemplateProcessPayment([...Cart.values()]);
 };
 
@@ -160,7 +176,7 @@ const handleUpDownCount = (
 };
 
 // Attach click event listener to the modal
-getElements('div#btnTriggerPayment')[0].addEventListener('click', () => {
+getElements(SELECTORS.BTN_CART)[0].addEventListener('click', () => {
   let sizeCart = Cart.size;
   if (sizeCart) {
     getTemplateProcessPayment([...Cart.values()]);
@@ -174,7 +190,7 @@ getElements('div#btnTriggerPayment')[0].addEventListener('click', () => {
 });
 
 // Handle Modal Cart
-getElements('div#btnTriggerPayment')[0].addEventListener('click', () => {
+getElements(SELECTORS.BTN_CART)[0].addEventListener('click', () => {
   let sizeCart = Cart.size;
   $('#paymentModal').modal(sizeCart !== 0 ? 'show' : 'hide');
 });
@@ -185,7 +201,7 @@ const removeItemCart = (idProduct) => {
   if (isDelete) {
     getTemplateProcessPayment([...Cart.values()]);
     let sizeCart = Cart.size;
-    let btnCart = getElements('section#payment div#btnTriggerPayment span')[0];
+    let btnCart = getElements(SELECTORS.COUNT_CART)[0];
     btnCart.innerHTML = sizeCart;
     if (!sizeCart) $('#paymentModal').modal('hide');
     setLocalStorageByKey('Cart', Cart);
@@ -195,7 +211,7 @@ const removeItemCart = (idProduct) => {
 // Clear Cart
 const handleClearCart = () => {
   Cart.clear();
-  getElements('section#payment div#btnTriggerPayment span')[0].innerHTML = 0;
+  getElements(SELECTORS.COUNT_CART)[0].innerHTML = 0;
   $('#paymentModal').modal('hide');
   localStorage.removeItem('Cart');
 };
@@ -209,7 +225,7 @@ const handlePurchase = () => {
     total,
   };
   Cart.clear();
-  getElements('section#payment div#btnTriggerPayment span')[0].innerHTML = 0;
+  getElements(SELECTORS.COUNT_CART)[0].innerHTML = 0;
   getTemplateSuccessPayment(bill);
   localStorage.removeItem('Cart');
 };

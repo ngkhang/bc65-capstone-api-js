@@ -154,6 +154,13 @@ section#payment div#paymentModal .modal-body .input-group {
   width: 60px;
 }
 
+footer {
+  border-top-width: 2px;
+  border-top-color: var(--gray-3);
+  border-top-style: solid;
+  background: var(--gray-1);
+}
+
 section#homepage a {
   transition: 0.2s all;
   opacity: 0.8;

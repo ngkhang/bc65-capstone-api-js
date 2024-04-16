@@ -13,6 +13,9 @@ const SELECTORS = {
   INPUT_SEARCH: 'section#customerPage form#searchByName input',
   BTN_SEARCH: 'section#customerPage form#searchByName button',
   BTN_SEARCH_TYPE: 'section#customerPage div#searchByType select#type',
+  BTN_CART: 'div#btnTriggerPayment',
+  COUNT_CART: 'section#payment div#btnTriggerPayment span',
+  SPINNER: 'div#spinnerCustomer',
 };
 
 // Properties of Product object
